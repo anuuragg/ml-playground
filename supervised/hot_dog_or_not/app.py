@@ -2,9 +2,14 @@ import streamlit as st
 import tensorflow as tf
 from PIL import Image
 import numpy as np
+import os
+
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "model", "food101_model.keras")
 
 # Load trained model
-model = tf.keras.models.load_model("model/food101_model.keras")
+model = tf.keras.models.load_model(MODEL_PATH)
 
 MAX_SIDE_LEN = 128
 
